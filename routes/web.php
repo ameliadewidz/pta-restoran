@@ -28,3 +28,11 @@ Route::get('categories', function () {
 Route::get('menu', function () {
     return view('menu');
 });
+
+Route::get('food', function () {
+    return view('food');
+});
+
+Route::get('beverages', function () {
+    return view('beverages');
+});

@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="text">
-                        <a href="#">
+                        <a href="{{ url('food') }}">
                             <h4>Food</h4>
                         </a>
                     </div>
@@ -66,7 +66,7 @@
                         <img src="{{ ('img/beverages.png') }}">
                     </div>
                     <div class="text">
-                        <a href="#">
+                        <a href="{{ url('beverages') }}">
                             <h4>Beverages</h4>
                         </a>
                     </div>

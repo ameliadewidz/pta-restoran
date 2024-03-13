@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Menu - Restaurant</title>
+    <title>Food - Restaurant</title>
 
     {{-- icons --}}
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -30,18 +30,18 @@
             <li>
                 <a href="{{ url('/') }}">Home</a>
                 <a href="{{ url('/') }}">About Us</a>
-                <a href="{{ url('menu') }}" class="active">Menu</a>
-                <a href="{{ url('categories') }}">Categories</a>
+                <a href="{{ url('menu') }}">Menu</a>
+                <a href="{{ url('categories') }}" class="active">Categories</a>
                 <a href="{{ url('reservation') }}">Reservation</a>
             </li>
         </ul>
     </header>
     {{-- end header --}}
 
-    {{-- menu --}}
+    {{-- food --}}
     <section class="menu" id="menu">
         <div class="middle-text">
-            <h4>Menu</h4>
+            <h4>Food</h4>
             <h2>Made with ♡</h2>
         </div>
 
@@ -111,75 +111,9 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row">
-                <img src="{{ ('img/makanan/creamy-shrimp.png') }}">
-                <h3>Creamy Shrimp</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <div class="in-text">
-                    <div class="price">
-                        <h6>Rp. 65.000</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <img src="{{ ('img/makanan/waffle.png') }}">
-                <h3>Waffle Berry</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <div class="in-text">
-                    <div class="price">
-                        <h6>Rp. 45.000</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <img src="{{ ('img/makanan/ramen.png') }}">
-                <h3>Classic Ramen</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <div class="in-text">
-                    <div class="price">
-                        <h6>Rp. 35.000</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <img src="{{ ('img/makanan/creamy-shrimp.png') }}">
-                <h3>Creamy Shrimp</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <div class="in-text">
-                    <div class="price">
-                        <h6>Rp. 65.000</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <img src="{{ ('img/makanan/waffle.png') }}">
-                <h3>Waffle Berry</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <div class="in-text">
-                    <div class="price">
-                        <h6>Rp. 45.000</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <img src="{{ ('img/makanan/ramen.png') }}">
-                <h3>Classic Ramen</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <div class="in-text">
-                    <div class="price">
-                        <h6>Rp. 35.000</h6>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
-    {{-- end menu --}}
+    {{-- end food --}}
 
     {{-- footer --}}
     <section class="contact" id="contact">
