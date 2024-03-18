@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Food - Restaurant</title>
+    <title>Food - Fli Cuisine</title>
 
     {{-- icons --}}
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -22,8 +22,8 @@
     {{-- header --}}
     <header>
         <a href="{{ url('/') }}" class="logo">
-            <i class="fa-solid fa-utensils"></i>
-            Restaurant
+            <img src="{{ ('img/logo.png') }}">
+            Fli Cuisine
         </a>
 
         <ul class="navlist">

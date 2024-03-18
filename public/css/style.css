@@ -52,10 +52,10 @@ header.sticky {
     color: var(--text-color);
     font-size: 30px;
 }
-.logo i {
-    vertical-align: middle;
-    margin-right: 8px;
-    color: var(--main-color);
+.logo img {
+    width: auto; 
+    height: 80px; 
+    margin-right: 10px;
 }
 
 .navlist {
