@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Menu - Restaurant</title>
+    <title>Menu</title>
+    <link rel="icon" href="{{ ('img/logo2.PNG') }}" type="image/x-icon">
 
     {{-- icons --}}
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -22,8 +23,8 @@
     {{-- header --}}
     <header>
         <a href="{{ url('/') }}" class="logo">
-            <i class="fa-solid fa-utensils"></i>
-            Restaurant
+            <img src="{{ ('img/logo.png') }}">
+            Fli Cuisine
         </a>
 
         <ul class="navlist">
@@ -31,7 +32,7 @@
                 <a href="{{ url('/') }}">Home</a>
                 <a href="{{ url('/') }}">About Us</a>
                 <a href="{{  route('menus.index') }}" class="active">Menu</a>
-                <a href="{{ route('categories.index') }}" class="active">Categories</a>
+                <a href="{{ route('categories.index') }}">Categories</a>
                 <a href="{{ route('reservations.step.one') }}">Reservation</a>
             </li>
         </ul>

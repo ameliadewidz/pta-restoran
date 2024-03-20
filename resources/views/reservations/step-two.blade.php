@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Restaurant - Reservation</title>
+    <title>Fli Cuisine - Reservation</title>
+    <link rel="icon" href="{{ ('/img/logo2.PNG') }}" type="image/x-icon">
 
     {{-- icons --}}
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -22,8 +23,8 @@
     {{-- header --}}
     <header>
         <a href="{{ url('/') }}" class="logo">
-            <i class="fa-solid fa-utensils"></i>
-            Restaurant
+            <img src="{{ ('/img/logo.png') }}">
+            Fli Cuisine
         </a>
 
         <ul class="navlist">
@@ -32,16 +33,16 @@
                 <a href="{{ url('/') }}">About Us</a>
                 <a href="{{ route('menus.index') }}">Menu</a>
                 <a href="{{ route('categories.index') }}">Categories</a>
-                <a href="{{ route('reservations.step.one') }}">Reservation</a>
+                <a href="{{ route('reservations.step.one') }}" class="active">Reservation</a>
             </li>
         </ul>
     </header>
     {{-- end header --}}
 
     {{-- form reservation --}}
-    <div class="con">
+    <div class="con" style="height: 350px">
         <form method="POST" action="{{ route('reservations.store.step.two') }}">
-            <h1>Table</h1>
+            <h1>Reservation</h1>
 
             @csrf
             <select id="table_id" name="table_id"
@@ -59,14 +60,14 @@
             @enderror
 
             <div class="btn-box">
-                <button type="submit" id="next2">Next</button>
+                <button type="submit" id="next2">Submit</button>
             </div>
         </form>
 
         <div class="step-row">
             <div id="progress"></div>
             <div class="step-col"><small>Step 1</small></div>
-            <div class="step-col"><small>Step 2</small></div>
+            <div class="step-col" style="color: #ff9f0d"><small>Step 2</small></div>
 
         </div>
     </div>

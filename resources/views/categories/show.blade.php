@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Menu Categories - Restaurant</title>
+    <title>Menu Categories</title>
+    <link rel="icon" href="{{ ('/img/logo2.PNG') }}" type="image/x-icon">
 
     {{-- icons --}}
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -22,8 +23,8 @@
     {{-- header --}}
     <header>
         <a href="{{ url('/') }}" class="logo">
-            <i class="fa-solid fa-utensils"></i>
-            Restaurant
+            <img src="{{ ('/img/logo.png') }}">
+            Fli Cuisine
         </a>
 
         <ul class="navlist">
@@ -31,7 +32,7 @@
                 <a href="{{ url('/') }}">Home</a>
                 <a href="{{ url('/') }}">About Us</a>
                 <a href="{{ route('menus.index') }}">Menu</a>
-                <a href="{{ route('categories.index') }}">Categories</a>
+                <a href="{{ route('categories.index') }}" class="active">Categories</a>
                 <a href="{{ route('reservations.step.one') }}">Reservation</a>
             </li>
         </ul>
@@ -44,29 +45,24 @@
             <h4>Categories</h4>
             <h2>Taste the Joy</h2>
         </div>
+        
+        <div class="menu-content">
+            @foreach ($category->menus as $menu)
+            <div class="row">
+                <img src="{{ Storage::url($menu->image) }}" alt="Image">
+                <div class="in-text">
+                    <h4 class="mb-3 text-xl font-semibold tracking-tight text-green-600 uppercase">
+                        {{ $menu->name }}</h4>
+                    <p class="leading-normal text-gray-700">
+                        {{ $menu->description }}
 
-        <div class="tea m-content">
-            <div class="box">
-                <div class="in-box">
-                    @foreach ($category->menus as $menu)
-                    <div class="bx-img">
-                        <img src="{{ Storage::url($menu->image) }}" alt="Image" />
+                    <div class="flex items-center justify-between p-4">
+                        <span class="text-xl text-green-600">${{ $menu->price }}</span>
                     </div>
-
-                    <div class="text">
-                        <h4 class="mb-3 text-xl font-semibold tracking-tight text-green-600 uppercase">
-                            {{ $menu->name }}</h4>
-                        <p class="leading-normal text-gray-700">
-                            {{ $menu->description }}
-
-                        <div class="flex items-center justify-between p-4">
-                            <span class="text-xl text-green-600">${{ $menu->price }}</span>
-                        </div>
-                        </p>
-                    </div>
-                    @endforeach
                 </div>
             </div>
+            @endforeach
+        </div>
     </section>
     {{-- end categories --}}
 

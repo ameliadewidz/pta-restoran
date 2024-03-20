@@ -52,10 +52,10 @@ header.sticky {
     color: var(--text-color);
     font-size: 30px;
 }
-.logo i {
-    vertical-align: middle;
-    margin-right: 8px;
-    color: var(--main-color);
+.logo img {
+    width: auto; 
+    height: 80px; 
+    margin-right: 10px;
 }
 
 .navlist {
@@ -73,6 +73,24 @@ header.sticky {
 }
 .navlist a.active {
     color: var(--main-color);
+}
+
+.thankyou {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.thankyou h1 {
+    margin-bottom: 10px;
+}
+.thankyou p {
+    margin-top: 10px;
+    color: var(--main-color);
+    font-weight: 400;
 }
 
 section {
@@ -214,8 +232,9 @@ span {
 
 .in-text {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column; /* Mengatur agar elemen-elemen menjadi satu kolom */
+    gap: 0.5rem; /* Menambahkan jarak antara elemen */
+    font-weight: 400;
 }
 .in-text .price h6 {
     font-size: 15px;

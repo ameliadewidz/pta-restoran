@@ -52,10 +52,10 @@ header.sticky {
     color: var(--text-color);
     font-size: 30px;
 }
-.logo i {
-    vertical-align: middle;
-    margin-right: 8px;
-    color: var(--main-color);
+.logo img {
+    width: auto; 
+    height: 80px; 
+    margin-right: 10px;
 }
 
 .navlist {
@@ -214,8 +214,9 @@ span {
 
 .in-text {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column; /* Mengatur agar elemen-elemen menjadi satu kolom */
+    gap: 0.5rem; /* Menambahkan jarak antara elemen */
+    font-weight: 400;
 }
 .in-text .price h6 {
     font-size: 15px;
@@ -256,23 +257,24 @@ span {
     padding: 35px;
     background: var(--other-color);
     border-radius: 3rem;
-}
-.box p {
-    color: var(--second-color);
-    font-size: 13px;
-    line-height: 30px;
-    margin-bottom: 1.5rem;
+    display: flex; /* Menjadikan box sebagai flex container */
+    flex-direction: column; /* Menjadikan isi box berada dalam satu kolom */
+    align-items: center; /* Mengatur agar isi box berada di tengah secara horizontal */
+    text-align: center; /* Mengatur agar teks di dalam box berada di tengah */
 }
 
-.in-box {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+.bx-img {
+    margin-bottom: 15px; /* Mengatur jarak antara gambar dan teks */
 }
 
 .bx-img img {
     width: 250px;
     height: auto;
+    transition: transform .50s ease;
+    cursor: pointer;
+}
+.bx-img img:hover {
+    transform: scale(1.1);
 }
 
 .text h4 {

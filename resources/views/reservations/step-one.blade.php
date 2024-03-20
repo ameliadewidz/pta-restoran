@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Restaurant - Reservation</title>
+    <title>Fli Cuisine - Reservation</title>
+    <link rel="icon" href="{{ ('/img/logo2.PNG') }}" type="image/x-icon">
 
     {{-- icons --}}
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -22,8 +23,8 @@
     {{-- header --}}
     <header>
         <a href="{{ url('/') }}" class="logo">
-            <i class="fa-solid fa-utensils"></i>
-            Restaurant
+            <img src="{{ ('/img/logo.png') }}">
+            Fli Cuisine
         </a>
 
         <ul class="navlist">
@@ -32,7 +33,7 @@
                 <a href="{{ url('/') }}">About Us</a>
                 <a href="{{ route('menus.index') }}">Menu</a>
                 <a href="{{ route('categories.index') }}">Categories</a>
-                <a href="{{ route('reservations.step.one') }}">Reservation</a>
+                <a href="{{ route('reservations.step.one')}}" class="active">Reservation</a>
             </li>
         </ul>
     </header>
@@ -44,44 +45,44 @@
             <h1>Personal Information</h1>
 
             @csrf
-            <input type="text" placeholder="First Name" id="first_name" name="first_name"
+            <input type="text" placeholder="First Name" id="first_name" name="first_name" required
                 value="{{ $reservation->first_name ?? '' }}"
                 class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
             @error('first_name')
                 <div class="text-sm text-red-400">{{ $message }}</div>
             @enderror
 
-            <input type="text" id="last_name" placeholder="Last Name" name="last_name"
+            <input type="text" id="last_name" placeholder="Last Name" name="last_name" required
             value="{{ $reservation->last_name ?? '' }}"
             class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
             @error('last_name')
             <div class="text-sm text-red-400">{{ $message }}</div>
             @enderror
 
-            <input type="email" placeholder="E-Mail" id="email" name="email"
+            <input type="email" placeholder="E-mail" id="email" name="email" required
                 value="{{ $reservation->email ?? '' }}"
                 class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
             @error('email')
                 <div class="text-sm text-red-400">{{ $message }}</div>
             @enderror              
 
-            <input type="text" placeholder="No HP" id="tel_number" name="tel_number"
+            <input type="text" placeholder="Phone Number" id="tel_number" name="tel_number" required
                 value="{{ $reservation->tel_number ?? '' }}"
                 class="block w-full appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
             @error('tel_number')
                 <div class="text-sm text-red-400">{{ $message }}</div>
             @enderror
 
-            <input type="datetime-local" id="res_date" name="res_date"
+            <input type="datetime-local" id="res_date" name="res_date" required
                 min="{{ $min_date->format('Y-m-d\TH:i:s') }}"
                 max="{{ $max_date->format('Y-m-d\TH:i:s') }}"
                 value="{{ $reservation ? $reservation->res_date->format('Y-m-d\TH:i:s') : '' }}"/>
-            <span class="text-xs">Pilih antara pukul 17:00-23:00.</span>
+            <span class="text-xs">Choose between 17.00 - 22.00</span>
             @error('res_date')
                 <div class="text-sm text-red-400">{{ $message }}</div>
             @enderror
 
-            <input type="number" placeholder="Jumlah Tamu" id="guest_number" name="guest_number"
+            <input type="number" placeholder="Number of Guest" id="guest_number" name="guest_number" required
                 value="{{ $reservation->guest_number ?? '' }}"/>
 
             @error('guest_number')
@@ -95,7 +96,7 @@
 
         <div class="step-row">
             <div id="progress"></div>
-            <div class="step-col"><small>Step 1</small></div>
+            <div class="step-col" style="color: #ff9f0d"><small>Step 1</small></div>
             <div class="step-col"><small>Step 2</small></div>
 
         </div>

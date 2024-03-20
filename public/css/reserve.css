@@ -51,10 +51,10 @@ header.sticky {
     color: var(--text-color);
     font-size: 30px;
 }
-.logo i {
-    vertical-align: middle;
-    margin-right: 8px;
-    color: var(--main-color);
+.logo img {
+    width: auto; 
+    height: 80px; 
+    margin-right: 10px;
 }
 
 .navlist {
@@ -387,28 +387,24 @@ form button {
     left: 450px;
 }
 
-#form3 {
-    left: 450px;
-}
-
 .step-row {
-    width: 360px;
+    width: 600px; /* Lebar diperbesar agar cocok dengan form */
     height: 40px;
     margin: 0 auto;
-    display:flex;
+    display: flex;
     align-items: center;
     box-shadow: 0 -1px 5px -1px #000;
     position: relative;
 }
 
 .step-col {
-    width: 120px;
+    width: 170px;
     text-align: center;
     color: #333;
-    position: relative;    
+    position: relative;      
 }
 
-#progress {
+/* #progress {
     position:absolute;
     height: 100%;
     width: 120px;
@@ -426,7 +422,7 @@ form button {
     right: -20px;
     top: 0;
     border-left: 20px solid #ff9f0d;
-}
+} */
 
 small {
     font-weight: 600;

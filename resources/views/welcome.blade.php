@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Restaurant</title>
+    <title>Fli Cuisine</title>
+    <link rel="icon" href="{{ ('img/logo2.PNG') }}" type="image/x-icon">
 
     {{-- icons --}}
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -22,15 +23,15 @@
     {{-- header --}}
     <header>
         <a href="{{ url('/') }}" class="logo">
-            <i class="fa-solid fa-utensils"></i>
-            Restaurant
+            <img src="{{ ('img/logo.png') }}">
+            Fli Cuisine
         </a>
 
         <ul class="navlist">
             <li>
                 <a href="#home" class="active">Home</a>
                 <a href="#about">About Us</a>
-                <a href="{{ route('menus.index') }}">Menu</a>
+                <a href="#menu">Menu</a>
                 <a href="{{ route('categories.index') }}">Categories</a>
                 <a href="{{ route('reservations.step.one') }}">Reservation</a>
             </li>
@@ -42,7 +43,7 @@
     <section class="home" id="home">
         <div class="home-text">
             <h1>Where <span>Flavors </span> <br> Meets Delight<br></h1>
-            <a href="#menu" class="btn">Explore Menu
+            <a href="{{ route('menus.index') }}" class="btn">Explore Menu
                 <i class='bx bxs-right-arrow'></i>
             </a> {{-- arahkan ke page menu --}}
             <a href="{{ route('reservations.step.one') }}" class="btn2">Reservation</a> {{-- arahkan ke page reservasi --}}
@@ -71,7 +72,7 @@
     {{-- end about us --}}
 
     {{-- team --}}
-    <section class="team" id="team">
+    {{-- <section class="team" id="team">
         <div class="middle-text">
             <h4>Team</h4>
             <h2>Get to Know Us</h2>
@@ -118,18 +119,32 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     {{-- end team --}}
 
     {{-- menu --}}
     <section class="menu" id="menu">
         <div class="middle-text">
             <h4>Menu</h4>
-            <h2>Today's Speciality</h2>
+            <h2>Made with ♡</h2>
         </div>
 
         <div class="menu-content">
-            
+            @foreach ($menus as $menu)
+            <div class="row">
+                <img src="{{ Storage::url($menu->image) }}" alt="Image">
+                <div class="in-text">
+                    <h4 class="mb-3 text-xl font-semibold tracking-tight text-green-600 uppercase">
+                        {{ $menu->name }}</h4>
+                    <p class="leading-normal text-gray-700">
+                        {{ $menu->description }}
+
+                    <div class="flex items-center justify-between p-4">
+                        <span class="text-xl text-green-600">${{ $menu->price }}</span>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
 
         <div class="row-btn">

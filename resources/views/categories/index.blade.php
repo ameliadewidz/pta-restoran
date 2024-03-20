@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Menu Categories - Restaurant</title>
-
+    <title>Menu Categories</title>
+    <link rel="icon" href="{{ ('img/logo2.PNG') }}" type="image/x-icon">
+    
     {{-- icons --}}
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <script src="https://kit.fontawesome.com/fb4411f49e.js" crossorigin="anonymous"></script>
@@ -22,8 +23,8 @@
     {{-- header --}}
     <header>
         <a href="{{ url('/') }}" class="logo">
-            <i class="fa-solid fa-utensils"></i>
-            Restaurant
+            <img src="{{ ('img/logo.png') }}">
+            Fli Cuisine
         </a>
 
         <ul class="navlist">
